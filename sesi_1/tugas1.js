@@ -1,6 +1,6 @@
-let matematika = 80;
-let bahasaInggris = 95;
-let ipa = 75;
+let matematika = 85;
+let bahasaInggris = 90;
+let ipa = 78;
 
 console.log("Matematika :" + matematika);
 console.log("Bahasa Inggris :" + bahasaInggris);
