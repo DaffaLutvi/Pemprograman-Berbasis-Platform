@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hitung Harga Akhir</title>
+  <script>
+    function hitungHargaAkhir(totalBelanja) {
+      let diskon = 0;
+
+      if (totalBelanja > 1000000) {
+        diskon = 0.15; 
+      } else if (totalBelanja > 500000) {
+        diskon = 0.10; 
+      } else {
+        diskon = 0; 
+      }
+
+      return totalBelanja - (totalBelanja * diskon);
+    }
+
+    function prosesHitung() {
+      let input = document.getElementById("totalBelanja").value;
+      let totalBelanja = parseInt(input);
+
+      if (isNaN(totalBelanja) || totalBelanja < 0) {
+        alert("Masukkan angka total belanja yang valid!");
+        return;
+      }
+
+      let hasil = hitungHargaAkhir(totalBelanja);
+      document.getElementById("output").innerText = 
+        "Harga akhir setelah diskon: Rp" + hasil.toLocaleString("id-ID");
+    }
+  </script>
+</head>
+<body>
+  <h2>Sistem Hitung Diskon Toko Online</h2>
+  <label>Total Belanja: Rp </label>
+  <input type="number" id="totalBelanja" placeholder="Masukkan Total Belanja"><br><br>
+  <button onclick="prosesHitung()">Hitung</button>
+
+  <p id="output"></p>
+</body>
+</html>
